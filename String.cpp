@@ -6,7 +6,11 @@ size_t String::MAX_SIZE_=100;
 String::String(size_t Arbitrary_value_of_capacity){
   capacity_=Arbitrary_value_of_capacity;
   size_ = 4;
-  char array[5]={'T','o','t','o','\0'};
-  str_=array;
+  str_=new char[capacity_];
+  str_[0]='T';
+  str_[1]='o';
+  str_[2]='t';
+  str_[3]='o';
+  str_[4]='\0';
 }
 
