@@ -13,7 +13,6 @@ String::String(size_t Arbitrary_value_of_capacity){
   str_[3]='o';
   str_[4]='\0';
 }
-String::~String(){
-  delete str_; // if we don't do that, the object String will be deleted but the heap will stil contain the value of the char array
-}
-
+//String::~String(){
+//  delete[] str_; // if we don't do that, the object String will be deleted but the heap will stil contain the values of the char array
+//}
