@@ -13,11 +13,14 @@ class String{
   //~String();
 
   //getters
-  
+  size_t capacity();
   //setters
   
   //methods
-  void reserve (size_t);
+
+  // Capacity: change the capacity_ to n .If n is biger than the curent capacity_, change the storage space dedicated to the char array.
+  void reserve (size_t n);
+
   
   protected : 
   //attributes

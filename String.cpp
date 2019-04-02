@@ -28,3 +28,7 @@ void String::reserve (size_t n){
   }
   capacity_=n;
 }
+
+size_t String::capacity(){
+  return capacity_;
+}
