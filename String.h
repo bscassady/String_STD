@@ -7,6 +7,11 @@ class String{
   public :
   //Constructors
   String(size_t Arbitrary_value_of_capacity);// Trivial Constructor with Arbitrary_value_of_capacity as parameter because we don't know how to get it yet
+
+
+  //Destructor
+  ~String();
+
   //getters
   
   //setters

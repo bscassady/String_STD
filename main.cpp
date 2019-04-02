@@ -3,8 +3,8 @@
 int main(){
 
 
-String test1= String(20);
-
+String* test1= new String(20);
+delete test1;
 
 
 return 0;
