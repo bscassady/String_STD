@@ -17,6 +17,7 @@ class String{
   //setters
   
   //methods
+  void reserve (size_t);
   
   protected : 
   //attributes
