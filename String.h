@@ -17,9 +17,10 @@ class String{
   //setters
   
   //methods
+  bool empty() const;//Returns whether the string is empty (i.e. whether its length is 0).
 
-  // Capacity: change the capacity_ to n .If n is biger than the curent capacity_, change the storage space dedicated to the char array.
-  void reserve (size_t n);
+  
+  void reserve (size_t n);// change the capacity_ to n .If n is biger than the curent capacity_, change the storage space dedicated to the char array.
 
   
   protected : 

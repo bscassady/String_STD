@@ -32,3 +32,6 @@ void String::reserve (size_t n){
 size_t String::capacity(){
   return capacity_;
 }
+bool String::empty() const{
+  return size_==0;
+}
