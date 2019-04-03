@@ -13,14 +13,15 @@ class String{
   //~String();
 
   //getters
-  size_t capacity();
+  size_t capacity();//Returns the size of the storage space currently allocated for the string, expressed in terms of bytes. This capacity is not necessarily equal to the string length. It can be equal or greater, with the extra space allowing the object to optimize its operations when new characters are added to the string.
+
   //setters
   
   //methods
   bool empty() const;//Returns whether the string is empty (i.e. whether its length is 0).
 
   
-  void reserve (size_t n);// change the capacity_ to n .If n is biger than the curent capacity_, change the storage space dedicated to the char array.
+  void reserve (size_t n);//Requests that the string capacity be adapted to a planned change in size to a length of up to n characters. If n is greater than the current string capacity, the function causes the container to increase its capacity to n characters (or greater). In all other cases, it is taken as a non-binding request to shrink the string capacity: the container implementation is free to optimize otherwise and leave the string with a capacity greater than n.
 
   
   protected : 
