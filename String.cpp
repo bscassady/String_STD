@@ -24,9 +24,10 @@ void String::reserve (size_t n){
     for (size_t i=0;i<=size_;++i){
       str_[i]=strbis[i];    
     }  
-    delete strbis;    
+    delete strbis;
+    capacity_=n;    
   }
-  capacity_=n;
+  
 }
 
 size_t String::capacity(){
