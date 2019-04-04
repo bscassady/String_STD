@@ -13,3 +13,5 @@ String.o: String.cpp String.h
 
 clean:
 	rm main.o String.o executable
+leak:
+	valgrind --leak-check=full ./executable
