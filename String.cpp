@@ -6,6 +6,7 @@ size_t String::MAX_SIZE_=100;
 String::String(size_t Arbitrary_value_of_capacity){
   capacity_=Arbitrary_value_of_capacity;
   size_ = 4;
+  length_ = 4;
   str_=new char[capacity_+1];
   str_[0]='T';
   str_[1]='o';
@@ -20,6 +21,7 @@ String::String(const char* s){
     ++size_;
   }
   capacity_ = size_;
+  length_=size_;
   str_ = new char[capacity_+1];
   for(unsigned int i =0;i<=size_;++i){
     str_[i]=s[i];
@@ -53,6 +55,10 @@ bool String::empty() const{
 
 size_t String::size() const{
   return size_;
+}
+
+size_t String::length() const{
+  return length_;
 }
 
 

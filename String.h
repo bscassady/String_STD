@@ -17,6 +17,7 @@ class String{
 
   size_t size() const;//Returns the length of the string, in terms of bytes.
 
+  size_t length() const;
   //setters
   
   //methods
@@ -31,6 +32,7 @@ class String{
   static size_t MAX_SIZE_;
   size_t size_;
   size_t capacity_;
+  size_t length_;
   char* str_;
   
   
