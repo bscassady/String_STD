@@ -38,3 +38,21 @@ size_t String::capacity(){
 bool String::empty() const{
   return size_==0;
 }
+
+size_t String::size() const{
+  return size_;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
