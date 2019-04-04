@@ -15,6 +15,8 @@ class String{
   //getters
   size_t capacity();//Returns the size of the storage space currently allocated for the string, expressed in terms of bytes. This capacity is not necessarily equal to the string length. It can be equal or greater, with the extra space allowing the object to optimize its operations when new characters are added to the string.
 
+  size_t size() const;//Returns the length of the string, in terms of bytes.
+
   //setters
   
   //methods
