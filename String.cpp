@@ -14,7 +14,7 @@ String::String(size_t Arbitrary_value_of_capacity){
   str_[4]='\0';
 }
 
-String::String(char* s){
+String::String(const char* s){
   size_ = 0;
   while(s[size_]!='\0'){
     ++size_;
