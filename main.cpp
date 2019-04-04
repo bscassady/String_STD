@@ -19,6 +19,6 @@ std::cout << (test1->size()==4)<< std::endl;
 
 
 delete test1;
-
+delete test2;
 return 0;
 }
