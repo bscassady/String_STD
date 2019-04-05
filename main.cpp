@@ -18,10 +18,16 @@ std::cout << not test1->empty()<< std::endl;
 std::cout << (test1->size()==4)<< std::endl;
 //Test length()
 std::cout<<(test1->length()==4)<<std::endl;
+//Test operator=(char*)
 *test1 = "bou";
+std::cout<<(test1->length()==3)<<std::endl;
 *test1= "baracuda";
-String test3="baudruche";
+std::cout<<(test1->length()==8)<<std::endl;
 
+//Test operator+(String)
+String test3="baudruche";
+String test4=test3+*test1;
+std::cout<<(test4.length()==17)<< (test4.capacity()==17) <<std::endl;
 
 
 delete test1;
