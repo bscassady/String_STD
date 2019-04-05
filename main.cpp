@@ -18,6 +18,9 @@ std::cout << not test1->empty()<< std::endl;
 std::cout << (test1->size()==4)<< std::endl;
 //Test length()
 std::cout<<(test1->length()==4)<<std::endl;
+*test1 = "bou";
+*test1= "baracuda";
+String test3="baudruche";
 
 
 
