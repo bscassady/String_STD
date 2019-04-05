@@ -68,8 +68,13 @@ size_t String::length() const{
   return size_;
 }
 
+
 const char* String::c_str() const{
   return str_ ;
+}
+
+size_t String::max_size() const{
+  return MAX_SIZE_;
 }
 
 String& String::operator= (const char* s){
@@ -89,7 +94,22 @@ String& String::operator= (const char* s){
   return *this;
 }
 
-
+String operator+ (const String& lhs, const String& rhs){
+  String* str= new String("");
+  str->size_=lhs.size_+rhs.size_;
+  str->capacity_=lhs.size_+rhs.size_;
+  delete str->str_;
+  str->str_=new char[str->capacity_+1];
+  for(unsigned int i =0;i<lhs.size_;++i){
+    str->str_[i]=lhs.str_[i];
+  }
+  for(unsigned int i =0;i<=rhs.size_;++i){
+    str->str_[i+lhs.size_]=rhs.str_[i];
+  }
+  return *str;
+  
+  
+}
 
 
 

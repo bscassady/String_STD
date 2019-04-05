@@ -4,6 +4,7 @@
 #define STRING_
 
 class String{
+  friend String operator+ (const String& lhs, const String& rhs);
   public :
   //Constructors
   String(size_t Arbitrary_value_of_capacity);// Trivial Constructor with Arbitrary_value_of_capacity as parameter because we don't know how to get it yet
@@ -16,6 +17,8 @@ class String{
 
   //Operator
   String& operator= (const char* s);//Assigns a new value to the string, replacing its current contents with a pointer to a null-terminated sequence of characters passed as  parameter. The sequence is copied as the new value for the string.
+
+  
   
   //getters
   size_t capacity();//Returns the size of the storage space currently allocated for the string, expressed in terms of bytes. This capacity is not necessarily equal to the string length. It can be equal or greater, with the extra space allowing the object to optimize its operations when new characters are added to the string.
@@ -25,6 +28,9 @@ class String{
   size_t length() const;
 
   const char* c_str() const; //Returns a pointer to an array that contains a null-terminated sequence of characters
+  
+  size_t max_size() const;//Returns the maximum length of the string, in terms of bytes. Arbitrarily equals 100.
+
   //setters
   
   //methods
@@ -47,4 +53,5 @@ class String{
 
 
 };
+String operator+ (const String& lhs, const String& rhs);
 #endif //STRING_
