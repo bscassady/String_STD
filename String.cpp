@@ -30,6 +30,15 @@ String::String(const char* s){
   str_[size_]='\0'; 
 }
 
+String::String(const String& str){
+  size_ = str.size_ ;
+  capacity_ = str.capacity_ ;
+  str_ = new char[capacity_ + 1] ;
+  for (size_t i = 0 ; i <= size_ ; ++i){
+      str_[i]=str.str_[i] ;    
+  }
+}
+
 String::~String(){
   delete[] str_; 
 }
@@ -67,6 +76,11 @@ size_t String::length() const{
   return size_;
 }
 
+
+const char* String::c_str() const{
+  return str_ ;
+}
+
 size_t String::max_size() const{
   return MAX_SIZE_;
 }
@@ -92,6 +106,7 @@ String& String::operator= (const char* s){
   return *this;
 }
 
+
 String operator+ (const String& lhs, const String& rhs){
   String* str= new String("");
   str->size_=lhs.size_+rhs.size_;
@@ -109,9 +124,30 @@ String operator+ (const String& lhs, const String& rhs){
   }
   str->str_[str->size_]='\0';
   return *str;
-  
-  
 }
+
+String& String::operator= (const String& s){
+  size_=0;
+  while(s.str_[size_]!='\0'){
+    ++size_;
+  }
+  if(size_>MAX_SIZE_){
+  size_=MAX_SIZE_;
+  }
+  if(capacity_<size_){
+    capacity_=size_;
+    str_=new char[capacity_+1];
+  }
+  for(size_t i =0;i<size_;++i){
+    str_[i]=s.str_[i];
+  }
+  str_[size_]='\0'; 
+
+  
+  return *this;
+}
+
+
 
 
 
