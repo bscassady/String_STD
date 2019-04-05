@@ -24,6 +24,8 @@ class String{
   size_t size() const;//Returns the length of the string, in terms of bytes.
 
   size_t length() const;
+  
+  size_t max_size() const;//Returns the maximum length of the string, in terms of bytes. Arbitrarily equals 100.
   //setters
   
   //methods

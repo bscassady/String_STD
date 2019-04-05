@@ -58,6 +58,11 @@ size_t String::size() const{
 size_t String::length() const{
   return size_;
 }
+
+size_t String::max_size() const{
+  return MAX_SIZE_;
+}
+
 String& String::operator= (const char* s){
   size_ = 0;
   while(s[size_]!='\0'){
