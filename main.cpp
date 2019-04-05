@@ -1,4 +1,5 @@
 #include <iostream>
+#include<string.h>
 #include"String.h"
 int main(){
 
@@ -25,6 +26,9 @@ String test3="baudruche";
 //Test max_size()
 std::cout<<(test1->max_size()==100)<<std::endl;
 std::cout<<(test2->max_size()==100)<<std::endl;
+
+//Test operator=String
+*test1= test3;
 
 
 

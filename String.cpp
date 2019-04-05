@@ -80,6 +80,22 @@ String& String::operator= (const char* s){
   return *this;
 }
 
+String& String::operator= (const String& s){
+  size_=0;
+  while(s.str_[size_]!='\0'){
+    ++size_;
+  }
+  if(capacity_<size_){
+    capacity_=size_;
+    str_=new char[capacity_+1];
+  }
+  for(size_t i =0;i<=size_;++i){
+    str_[i]=s.str_[i];
+  }
+  
+  return *this;
+}
+
 
 
 
