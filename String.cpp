@@ -63,7 +63,10 @@ String& String::operator= (const char* s){
   while(s[size_]!='\0'){
     ++size_;
   }
-  this->reserve(size_);
+  if (capacity_<size_){
+    capacity_=size_;
+    str_=new char[capacity_+1];
+  }
   for(unsigned int i =0;i<=size_;++i){
     str_[i]=s[i];
   }  
