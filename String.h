@@ -4,6 +4,7 @@
 #define STRING_
 
 class String{
+  friend String operator+ (const String& lhs, const String& rhs);
   public :
   //Constructors
   String(size_t Arbitrary_value_of_capacity);// Trivial Constructor with Arbitrary_value_of_capacity as parameter because we don't know how to get it yet
@@ -52,4 +53,5 @@ class String{
 
 
 };
+String operator+ (const String& lhs, const String& rhs);
 #endif //STRING_
