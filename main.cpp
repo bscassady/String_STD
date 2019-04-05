@@ -36,6 +36,10 @@ String test3="baudruche";
 std::cout<<(test1->max_size()==100)<<std::endl;
 std::cout<<(test2->max_size()==100)<<std::endl;
 
+//Test clear()
+ctest->clear() ;
+std::cout<<(test1->size()==0)<<std::endl;
+std::cout<<((strcmp(test1->c_str(),"")==0))<<std::endl;
 //Test operator=String
 *test1= test3;
 

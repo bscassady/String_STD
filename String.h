@@ -28,6 +28,8 @@ class String{
   
   size_t max_size() const;//Returns the maximum length of the string, in terms of bytes. Arbitrarily equals 100.
 
+  void clear();//Erases the contents of the string, which becomes an empty string.
+
   //setters
   
   //methods

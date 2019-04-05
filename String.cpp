@@ -77,6 +77,11 @@ size_t String::max_size() const{
   return MAX_SIZE_;
 }
 
+void String::clear(){
+  str_[0]='\0';
+  size_ = 0 ;  
+}
+
 String& String::operator= (const char* s){
   size_ = 0;
   while(s[size_]!='\0'){
