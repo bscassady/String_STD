@@ -42,8 +42,8 @@ std::cout<<(test2->max_size()==100)<<std::endl;
 
 //Test clear()
 ctest->clear() ;
-std::cout<<(test1->size()==0)<<std::endl;
-std::cout<<((strcmp(test1->c_str(),"")==0))<<std::endl;
+std::cout<<(ctest->size()==0)<<std::endl;
+std::cout<<((strcmp(ctest->c_str(),"")==0))<<std::endl;
 //Test limitation size
 char c[]       ="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
 test3=c;
@@ -57,6 +57,9 @@ std::cout<<(test6.size()==100)<<std::endl;
 
 //Test operator=String
 *test1= test3;
+//Test operator=(char)
+test3 = 'C' ;
+std::cout<<test3.c_str()<<std::endl;
 
 
 

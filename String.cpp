@@ -152,7 +152,13 @@ String& String::operator= (const String& s){
   return *this;
 }
 
-
+String& String::operator= (char c){
+  this->clear() ;
+  str_[0] = c ;
+  str_[1] = '\0' ;
+  size_ = 1 ;
+  return *this;
+}
 
 
 

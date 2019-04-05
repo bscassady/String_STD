@@ -18,6 +18,7 @@ class String{
   //Operator
   String& operator= (const char* s);//Assigns a new value to the string, replacing its current contents with a pointer to a null-terminated sequence of characters passed as  parameter. The sequence is copied as the new value for the string.
   String& operator= (const String& s);//Assigns a new value to the string, replacing its current contents with the contents of another String passed as parameter.
+  String& operator= (char c);//The string value is set to a single copy of this character (the string length becomes 1).
   //getters
   size_t capacity();//Returns the size of the storage space currently allocated for the string, expressed in terms of bytes. This capacity is not necessarily equal to the string length. It can be equal or greater, with the extra space allowing the object to optimize its operations when new characters are added to the string.
 
