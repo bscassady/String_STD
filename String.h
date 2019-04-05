@@ -9,7 +9,7 @@ class String{
   String(size_t Arbitrary_value_of_capacity);// Trivial Constructor with Arbitrary_value_of_capacity as parameter because we don't know how to get it yet
   String(const char* s);
 
-  String (const String& str);
+  String (const String& str);//Copy constructor - constructs a copy of str.
 
   //Destructor
   ~String();//Destroys the string object. This deallocates all the storage capacity allocated by the string using its allocator.
@@ -23,6 +23,8 @@ class String{
   size_t size() const;//Returns the length of the string, in terms of bytes.
 
   size_t length() const;
+
+  const char* c_str() const; //Returns a pointer to an array that contains a null-terminated sequence of characters
   //setters
   
   //methods

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string.h>
 #include"String.h"
 int main(){
 
@@ -21,6 +22,10 @@ std::cout << (ctest->capacity()==test1->capacity())<< std::endl;
 std::cout << (test1->size()==4)<< std::endl;
 //Test length()
 std::cout<<(test1->length()==4)<<std::endl;
+//Test c_str()
+char str1[] = {'T','o','t','o','\0'};
+std::cout<<((strcmp(test1->c_str(),str1)==0))<<std::endl;
+
 *test1 = "bou";
 *test1= "baracuda";
 String test3="baudruche";

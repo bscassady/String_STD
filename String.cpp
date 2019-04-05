@@ -67,6 +67,11 @@ size_t String::size() const{
 size_t String::length() const{
   return size_;
 }
+
+const char* String::c_str() const{
+  return str_ ;
+}
+
 String& String::operator= (const char* s){
   size_ = 0;
   while(s[size_]!='\0'){
