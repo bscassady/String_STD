@@ -22,6 +22,10 @@ std::cout<<(test1->length()==4)<<std::endl;
 *test1= "baracuda";
 String test3="baudruche";
 
+//Test max_size()
+std::cout<<(test1->max_size()==100)<<std::endl;
+std::cout<<(test2->max_size()==100)<<std::endl;
+
 
 
 delete test1;
