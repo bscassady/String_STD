@@ -4,7 +4,9 @@
 #define STRING_
 
 class String{
+
   friend String operator+ (const String& lhs, const String& rhs);
+  friend String operator+ (const char*   lhs, const String& rhs);//Returns a newly constructed string object with its value being the concatenation of the characters in lhs followed by those of rhs.
   public :
   //Constructors
   String(size_t Arbitrary_value_of_capacity);// Trivial Constructor with Arbitrary_value_of_capacity as parameter because we don't know how to get it yet

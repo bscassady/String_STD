@@ -182,6 +182,29 @@ String& String::operator= (char c){
   return *this;
 }
 
+String operator+ (const char* lhs, const String& rhs){
+  String* new_string = new String("") ;
+  String lhs_str = lhs ;
+  new_string->size_ = lhs_str.size_ + rhs.size_;
+  if(new_string->size_ > new_string->MAX_SIZE_){
+  new_string->size_ = new_string->MAX_SIZE_;
+  }
+  new_string->capacity_ = lhs_str.size_ + rhs.size_;
+  new_string->str_ = new char[new_string->capacity_ + 1];
+  for(size_t i = 0 ; i < lhs_str.size_ ; ++i){
+    new_string->str_[i] = lhs_str.str_[i];
+  }
+  for(size_t i =lhs_str.size_ ; i < new_string->size_ ; ++i){
+    new_string->str_[i] = rhs.str_[i-lhs_str.size_];
+  }
+  new_string->str_[new_string->size_]= '\0';
+  return *new_string ;
+}
+
+
+
+
+
 
 
 
