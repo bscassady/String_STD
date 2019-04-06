@@ -28,6 +28,7 @@ String::String(const char* s){
     str_[i]=s[i];
   }
   str_[size_]='\0'; 
+  
 }
 
 String::String(const String& str){
@@ -89,6 +90,27 @@ void String::clear(){
   str_[0]='\0';
   size_ = 0 ;  
 }
+
+void String::resize(size_t n, char c){
+  if(n>size_){
+    reserve(n+1);
+    for(size_t i =size_;i<n;++i){
+      str_[i]=c;
+    }
+    str_[n]='\0';
+  }
+  else{
+    char* strbis=str_;
+    str_=new char[capacity_+1];
+    for (size_t i=0;i<n;++i){
+      str_[i]=strbis[i];    
+    }
+    str_[n]='\0'; 
+    delete strbis;
+    size_=n;
+  }
+}    
+      
 
 String& String::operator= (const char* s){
   size_ = 0;

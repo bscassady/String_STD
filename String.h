@@ -40,6 +40,7 @@ class String{
   
   void reserve (size_t n);//Requests that the string capacity be adapted to a planned change in size to a length of up to n characters. If n is greater than the current string capacity, the function causes the container to increase its capacity to n characters (or greater). In all other cases, it is taken as a non-binding request to shrink the string capacity: the container implementation is free to optimize otherwise and leave the string with a capacity greater than n.
 
+  void resize(size_t n, char c);//Changes the size of the str_ attribute to a size n passed as parameter. if n is greater than the current size, the character c is appended the adequate the number of time. if n is less, a troncature of the first n elements of str_ is affected to str_.
   
   protected : 
   //attributes

@@ -61,6 +61,11 @@ std::cout<<(test6.size()==100)<<std::endl;
 test3 = 'C' ;
 std::cout<<test3.c_str()<<std::endl;
 
+//Test method resize()
+test3.resize(11,'+');
+std::cout<<test3.c_str()<<std::endl;
+test3.resize(3,'+');
+std::cout<<test3.c_str()<<std::endl;
 
 
 
