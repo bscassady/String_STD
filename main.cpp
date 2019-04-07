@@ -70,7 +70,10 @@ test3.resize(11,'+');
 std::cout<<test3.c_str()<<std::endl;
 test3.resize(3,'+');
 std::cout<<test3.c_str()<<std::endl;
-
+//Test default Constructor
+String dctest ;
+std::cout<<dctest.c_str()<<std::endl;
+std::cout<<(dctest.size()==0)<<std::endl;
 
 
 delete test1;

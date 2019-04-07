@@ -3,6 +3,13 @@
 
 size_t String::MAX_SIZE_=100;
 
+String::String(){
+  size_ = 0 ;
+  capacity_ = 0 ;
+  str_= new char[1];
+  str_[0]='\0' ; 
+}
+
 String::String(size_t Arbitrary_value_of_capacity){
   capacity_=Arbitrary_value_of_capacity;
   size_ = 4;
@@ -136,7 +143,7 @@ String& String::operator= (const char* s){
 
 
 String operator+ (const String& lhs, const String& rhs){
-  String str("");
+  String str;
   str.size_=lhs.size_+rhs.size_;
   if(str.size_>str.MAX_SIZE_){
   str.size_=str.MAX_SIZE_;
@@ -185,7 +192,7 @@ String& String::operator= (char c){
 }
 
 String operator+ (const char* lhs, const String& rhs){
-  String new_string("") ;
+  String new_string ;
   String lhs_str = lhs ;
   new_string.size_ = lhs_str.size_ + rhs.size_;
   if(new_string.size_ > new_string.MAX_SIZE_){
