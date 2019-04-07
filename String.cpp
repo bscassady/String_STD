@@ -55,7 +55,7 @@ void String::reserve (size_t n){
       str_[i]=strbis[i];    
     }
     str_[size_]='\0'; 
-    delete strbis;
+    delete[] strbis;
     capacity_=n;    
   }
   
@@ -122,6 +122,7 @@ String& String::operator= (const char* s){
   }
   if (capacity_<size_){
     capacity_=size_;
+    delete[] str_;
     str_=new char[capacity_+1];
   }
   for(unsigned int i =0;i<size_;++i){
@@ -135,22 +136,22 @@ String& String::operator= (const char* s){
 
 
 String operator+ (const String& lhs, const String& rhs){
-  String* str= new String("");
-  str->size_=lhs.size_+rhs.size_;
-  if(str->size_>str->MAX_SIZE_){
-  str->size_=str->MAX_SIZE_;
+  String str("");
+  str.size_=lhs.size_+rhs.size_;
+  if(str.size_>str.MAX_SIZE_){
+  str.size_=str.MAX_SIZE_;
   }
-  str->capacity_=lhs.size_+rhs.size_;
-  delete str->str_;
-  str->str_=new char[str->capacity_+1];
+  str.capacity_=lhs.size_+rhs.size_;
+  delete[] str.str_;
+  str.str_=new char[str.capacity_+1];
   for(unsigned int i =0;i<lhs.size_;++i){
-    str->str_[i]=lhs.str_[i];
+    str.str_[i]=lhs.str_[i];
   }
-  for(unsigned int i =lhs.size_;i<str->size_;++i){
-    str->str_[i]=rhs.str_[i-lhs.size_];
+  for(unsigned int i =lhs.size_;i<str.size_;++i){
+    str.str_[i]=rhs.str_[i-lhs.size_];
   }
-  str->str_[str->size_]='\0';
-  return *str;
+  str.str_[str.size_]='\0';
+  return str;
 }
 
 String& String::operator= (const String& s){
@@ -163,6 +164,7 @@ String& String::operator= (const String& s){
   }
   if(capacity_<size_){
     capacity_=size_;
+    delete[] str_;
     str_=new char[capacity_+1];
   }
   for(size_t i =0;i<size_;++i){
@@ -183,22 +185,23 @@ String& String::operator= (char c){
 }
 
 String operator+ (const char* lhs, const String& rhs){
-  String* new_string = new String("") ;
+  String new_string("") ;
   String lhs_str = lhs ;
-  new_string->size_ = lhs_str.size_ + rhs.size_;
-  if(new_string->size_ > new_string->MAX_SIZE_){
-  new_string->size_ = new_string->MAX_SIZE_;
+  new_string.size_ = lhs_str.size_ + rhs.size_;
+  if(new_string.size_ > new_string.MAX_SIZE_){
+  new_string.size_ = new_string.MAX_SIZE_;
   }
-  new_string->capacity_ = lhs_str.size_ + rhs.size_;
-  new_string->str_ = new char[new_string->capacity_ + 1];
+  new_string.capacity_ = lhs_str.size_ + rhs.size_;
+  delete[] new_string.str_;
+  new_string.str_ = new char[new_string.capacity_ + 1];
   for(size_t i = 0 ; i < lhs_str.size_ ; ++i){
-    new_string->str_[i] = lhs_str.str_[i];
+    new_string.str_[i] = lhs_str.str_[i];
   }
-  for(size_t i =lhs_str.size_ ; i < new_string->size_ ; ++i){
-    new_string->str_[i] = rhs.str_[i-lhs_str.size_];
+  for(size_t i =lhs_str.size_ ; i < new_string.size_ ; ++i){
+    new_string.str_[i] = rhs.str_[i-lhs_str.size_];
   }
-  new_string->str_[new_string->size_]= '\0';
-  return *new_string ;
+  new_string.str_[new_string.size_]= '\0';
+  return new_string ;
 }
 
 
