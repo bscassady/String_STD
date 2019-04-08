@@ -6,7 +6,8 @@
 class String{
 
   friend String operator+ (const String& lhs, const String& rhs);
-  friend String operator+ (const char*   lhs, const String& rhs);//Returns a newly constructed string object with its value being the concatenation of the characters in lhs followed by those of rhs.
+  friend String operator+ (const char*   lhs, const String& rhs);
+  friend String operator+ (const String& lhs, const char*   rhs);//Returns a newly constructed string object with its value being the concatenation of the characters in lhs followed by those of rhs.
   public :
   //Constructors
   String();
