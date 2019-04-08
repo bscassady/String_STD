@@ -61,15 +61,18 @@ std::cout<<(test6.size()==100)<<std::endl;
 test3 = 'C' ;
 std::cout<<test3.c_str()<<std::endl;
 //Test operator+(char*)
-String test7("") ;
-test7 = test3 + "++" ;
+String test7 ;
+String test8 ;
+test7 = "++" + test3 ;
+test8 = test3 + "++" ;
 std::cout<<test7.c_str()<<std::endl;
+std::cout<<test8.c_str()<<std::endl;
 
 //Test operator+(char)
 
 
-String test8=test3+'+' ;
-std::cout<<test8.c_str()<<std::endl;
+String test9=test3+'+' ;
+std::cout<<test9.c_str()<<std::endl;
 
 //Test method resize()
 test3.resize(11,'+');

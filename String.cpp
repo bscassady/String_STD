@@ -184,7 +184,6 @@ String& String::operator= (const String& s){
 }
 
 String& String::operator= (char c){
-  this->clear() ;
   str_[0] = c ;
   str_[1] = '\0' ;
   size_ = 1 ;
@@ -211,12 +210,38 @@ String operator+ (const char* lhs, const String& rhs){
   return new_string ;
 }
 
+
 String operator+ (const String& lhs,const char rhs ){
   String str_rhs;
   str_rhs = rhs; 
   return lhs+str_rhs;
 } 
   
+
+String operator+ (const String& lhs, const char* rhs){
+  String new_string ;
+  String rhs_str = rhs ;
+  new_string.size_ = lhs.size_ + rhs_str.size_;
+  if(new_string.size_ > new_string.MAX_SIZE_){
+  new_string.size_ = new_string.MAX_SIZE_;
+  }
+  new_string.capacity_ = lhs.size_ + rhs_str.size_;
+  delete[] new_string.str_;
+  new_string.str_ = new char[new_string.capacity_ + 1];
+  for(size_t i = 0 ; i < lhs.size_ ; ++i){
+    new_string.str_[i] = lhs.str_[i];
+  }
+  for(size_t i =lhs.size_ ; i < new_string.size_ ; ++i){
+    new_string.str_[i] = rhs_str.str_[i-lhs.size_];
+  }
+  new_string.str_[new_string.size_]= '\0';
+  return new_string ;
+}
+
+
+
+
+
 
 
 
