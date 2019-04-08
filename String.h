@@ -41,7 +41,6 @@ class String{
 
   void clear();//Erases the contents of the string, which becomes an empty string.
 
-  //setters
   
   //methods
   bool empty() const;//Returns whether the string is empty (i.e. whether its length is 0).

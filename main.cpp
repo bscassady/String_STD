@@ -7,6 +7,8 @@ int main(){
 String* test1= new String(20);
 const char* s="Character sequence test";
 String* test2 = new String(s);
+std::cout<<"Test Constructor(c_str) : "<<std::endl;
+std::cout<<(strcmp("Character sequence test",test2->c_str())==0)<<std::endl;
 std::cout << (test1->capacity()==20) << std::endl;
 test1->reserve(10);
 std::cout << (test1->capacity()==20) << std::endl;
@@ -21,6 +23,7 @@ std::cout << (ctest->capacity()==test1->capacity())<< std::endl;
 //Test size()
 std::cout << (test1->size()==4)<< std::endl;
 //Test length()
+std::cout<<"Test method length() : "<<std::endl;
 std::cout<<(test1->length()==4)<<std::endl;
 
 //Test c_str()
@@ -37,6 +40,7 @@ String test4=test3+*test1;
 std::cout<<(test4.length()==17)<< (test4.capacity()==17) <<std::endl;
 
 //Test max_size()
+std::cout<<"Test method max_size() : "<<std::endl;
 std::cout<<(test1->max_size()==100)<<std::endl;
 std::cout<<(test2->max_size()==100)<<std::endl;
 
@@ -56,7 +60,9 @@ String test6 = test3+*test5;
 std::cout<<(test6.size()==100)<<std::endl;
 
 //Test operator=String
+std::cout<<"Test operator =(String)"<<std::endl;
 *test1= test3;
+std::cout<<(strcmp(test1->c_str(),test3.c_str())==0)<<std::endl;
 //Test operator=(char)
 test3 = 'C' ;
 std::cout<<test3.c_str()<<std::endl;
@@ -69,16 +75,17 @@ std::cout<<test7.c_str()<<std::endl;
 std::cout<<test8.c_str()<<std::endl;
 
 //Test operator+(char)
+std::cout<<"Test operator +(char)"<<std::endl;
 
-
-String test9=test3+'+' ;
-std::cout<<test9.c_str()<<std::endl;
+String test_operator_char=test3+'+' ;
+std::cout<<(strcmp(test_operator_char.c_str(),"C+")==0)<<std::endl;
 
 //Test method resize()
+std::cout<<"Test method resize()"<<std::endl;
 test3.resize(11,'+');
-std::cout<<test3.c_str()<<std::endl;
+std::cout<<(strcmp(test3.c_str(),"C++++++++++")==0)<<std::endl;
 test3.resize(3,'+');
-std::cout<<test3.c_str()<<std::endl;
+std::cout<<(strcmp(test3.c_str(),"C++")==0)<<std::endl;
 //Test default Constructor
 String dctest ;
 std::cout<<dctest.c_str()<<std::endl;
