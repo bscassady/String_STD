@@ -184,6 +184,11 @@ String& String::operator= (const String& s){
 }
 
 String& String::operator= (char c){
+  if (size_ == 0) {
+    delete str_ ;
+    capacity_ = 1 ;
+    str_= new char[capacity_ + 1];
+  }
   str_[0] = c ;
   str_[1] = '\0' ;
   size_ = 1 ;
