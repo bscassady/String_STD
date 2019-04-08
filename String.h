@@ -7,6 +7,7 @@ class String{
 
   friend String operator+ (const String& lhs, const String& rhs);
   friend String operator+ (const char*   lhs, const String& rhs);//Returns a newly constructed string object with its value being the concatenation of the characters in lhs followed by those of rhs.
+  friend String operator+ ( const String& lhs,const char rhs);//Returns a newly created String object with a str_ argument being the concatenation of the str_ argument of the string and the char passed as parameter.
   public :
   //Constructors
   String();
@@ -23,6 +24,7 @@ class String{
   String& operator= (const char* s);//Assigns a new value to the string, replacing its current contents with a pointer to a null-terminated sequence of characters passed as  parameter. The sequence is copied as the new value for the string.
   String& operator= (const String& s);//Assigns a new value to the string, replacing its current contents with the contents of another String passed as parameter.
   String& operator= (char c);//The string value is set to a single copy of this character (the string length becomes 1).
+
   //getters
   size_t capacity();//Returns the size of the storage space currently allocated for the string, expressed in terms of bytes. This capacity is not necessarily equal to the string length. It can be equal or greater, with the extra space allowing the object to optimize its operations when new characters are added to the string.
 

@@ -211,11 +211,12 @@ String operator+ (const char* lhs, const String& rhs){
   return new_string ;
 }
 
-
-
-
-
-
+String operator+ (const String& lhs,const char rhs ){
+  String str_rhs;
+  str_rhs = rhs; 
+  return lhs+str_rhs;
+} 
+  
 
 
 

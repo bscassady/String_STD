@@ -65,6 +65,12 @@ String test7("") ;
 test7 = test3 + "++" ;
 std::cout<<test7.c_str()<<std::endl;
 
+//Test operator+(char)
+
+
+String test8=test3+'+' ;
+std::cout<<test8.c_str()<<std::endl;
+
 //Test method resize()
 test3.resize(11,'+');
 std::cout<<test3.c_str()<<std::endl;
