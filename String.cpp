@@ -99,6 +99,9 @@ void String::clear(){
 }
 
 void String::resize(size_t n, char c){
+  if(n>MAX_SIZE_){
+    n=MAX_SIZE_;
+  }  
   if(n>size_){
     reserve(n+1);
     for(size_t i =size_;i<n;++i){
@@ -107,13 +110,9 @@ void String::resize(size_t n, char c){
     str_[n]='\0';
   }
   else{
-    char* strbis=str_;
-    str_=new char[capacity_+1];
-    for (size_t i=0;i<n;++i){
-      str_[i]=strbis[i];    
-    }
+   
     str_[n]='\0'; 
-    delete strbis;
+    
     size_=n;
   }
 }    
@@ -215,6 +214,14 @@ String operator+ (const char* lhs, const String& rhs){
   return new_string ;
 }
 
+
+String operator+ (const String& lhs,const char rhs ){
+  String str_rhs;
+  str_rhs = rhs; 
+  return lhs+str_rhs;
+} 
+  
+
 String operator+ (const String& lhs, const char* rhs){
   String new_string ;
   String rhs_str = rhs ;
@@ -234,6 +241,7 @@ String operator+ (const String& lhs, const char* rhs){
   new_string.str_[new_string.size_]= '\0';
   return new_string ;
 }
+
 
 
 
