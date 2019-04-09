@@ -25,6 +25,13 @@ std::cout<<"Test empty()"<<std::endl;//Test empty()
 std::cout << not test1->empty()<< std::endl;
 String testvide("");
 std::cout <<  testvide.empty()<< std::endl;
+
+//Test default Constructor
+std::cout << "Default Constructor test" << std::endl;
+String dctest ;
+std::cout<<(strcmp(dctest.c_str(),"")==0)<<std::endl;
+std::cout<<(dctest.size()==0)<<std::endl;
+
 //Test Copy Constructor
 std::cout << "Copy Constructor Test" << std::endl;
 String* ctest = test1 ;
@@ -80,7 +87,7 @@ test_cle2.clear() ;
 std::cout<<(test_cle.size()==0)<<std::endl;
 std::cout<<((strcmp(test_cle.c_str(),"")==0))<<std::endl;
 std::cout<<(test_cle2.size()==0)<<std::endl;
-std::cout<<((strcmp(test_cle2.c_str(),"")==0))<<std::endl; //done
+std::cout<<((strcmp(test_cle2.c_str(),"")==0))<<std::endl; 
 
 //Test limitation size
 ctest->clear() ;
@@ -103,37 +110,44 @@ delete testLms2;
 std::cout<<"Test operator =(String)"<<std::endl;
 *test1= test3;
 std::cout<<(strcmp(test1->c_str(),test3.c_str())==0)<<std::endl;
+
 //Test operator=(char)
 std::cout << "Operator= (char) Test" << std::endl;
-test3 = 'C' ;
-std::cout<<test3.c_str()<<std::endl;
+String test_ope1 ;
+String test_ope2 ;
+char char1 = 'C' ;
+char char2 = '+' ;
+test_ope1 = char1;
+test_ope2 = char2;
+std::cout<<(strcmp(test_ope1.c_str(),"C")==0)<<std::endl;
+std::cout<<(strcmp(test_ope2.c_str(),"+")==0)<<std::endl;
+
 //Test operator+(char*)
 std::cout << "Operator+ (char*) Test" << std::endl;
-String test7 ;
-String test8 ;
-test7 = "++" + test3 ;
-test8 = test3 + "++" ;
-std::cout<<test7.c_str()<<std::endl;
-std::cout<<test8.c_str()<<std::endl;
+String test_ope3 ;
+String test_ope4 ;
+String test_ope5 ;
+test_ope3 = "++" + test_ope1 ;
+test_ope4 = test_ope1 + "++" ;
+test_ope5 = test_ope1 + "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
+std::cout<<(strcmp(test_ope3.c_str(),"++C")==0)<<std::endl;
+std::cout<<(strcmp(test_ope4.c_str(),"C++")==0)<<std::endl;
+std::cout<<(test_ope5.max_size()==100)<<std::endl;
 
 //Test operator+(char)
 std::cout<<"Test operator +(char)"<<std::endl;
 
-String test_operator_char=test3+'+' ;
+String test_operator_char=test_ope1+'+' ;
 std::cout<<(strcmp(test_operator_char.c_str(),"C+")==0)<<std::endl;
 
 //Test method resize()
 std::cout<<"Test method resize()"<<std::endl;
-test3.resize(11,'+');
-std::cout<<(strcmp(test3.c_str(),"C++++++++++")==0)<<std::endl;
-test3.resize(3,'+');
-std::cout<<(strcmp(test3.c_str(),"C++")==0)<<std::endl;
-//Test default Constructor
-std::cout << "Default Constructor test" << std::endl;
-String dctest ;
-std::cout<<dctest.c_str()<<std::endl;
-std::cout<<(dctest.size()==0)<<std::endl;
-
+String test_res1("C") ;
+String test_res2("C") ;
+test_res1.resize(11,'+');
+std::cout<<(strcmp(test_res1.c_str(),"C++++++++++")==0)<<std::endl;
+test_res2.resize(3,'+');
+std::cout<<(strcmp(test_res2.c_str(),"C++")==0)<<std::endl;
 
 delete test1;
 delete test2;
