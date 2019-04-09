@@ -19,6 +19,7 @@ std::cout << "Copy Constructor Test" << std::endl;
 String* ctest = test1 ;
 std::cout << (ctest->size()==4)<< std::endl;
 std::cout << (ctest->capacity()==test1->capacity())<< std::endl;
+
 //Test size()
 std::cout << "Size Test" << std::endl;
 String test_siz ;
@@ -33,8 +34,12 @@ std::cout<<(test1->length()==4)<<std::endl;
 
 //Test c_str()
 std::cout << "C_str Test" << std::endl;
-char str1[] = {'T','o','t','o','\0'};
-std::cout<<((strcmp(test1->c_str(),str1)==0))<<std::endl;
+String test_str1 ;
+String test_str2(" World") ;
+char str1[] = "" ;
+char str2[] = " World" ;
+std::cout<<((strcmp(test_str1.c_str(),str1)==0))<<std::endl;
+std::cout<<((strcmp(test_str2.c_str(),str2)==0))<<std::endl;
 
 //Test operator=(char*)
 *test1 = "bou";
@@ -51,9 +56,15 @@ std::cout<<(test2->max_size()==100)<<std::endl;
 
 //Test clear()
 std::cout << "Clear Test" << std::endl;
-ctest->clear() ;
-std::cout<<(ctest->size()==0)<<std::endl;
-std::cout<<((strcmp(ctest->c_str(),"")==0))<<std::endl;
+String test_cle ;
+String test_cle2("Python") ;
+test_cle.clear() ;
+test_cle2.clear() ;
+std::cout<<(test_cle.size()==0)<<std::endl;
+std::cout<<((strcmp(test_cle.c_str(),"")==0))<<std::endl;
+std::cout<<(test_cle2.size()==0)<<std::endl;
+std::cout<<((strcmp(test_cle2.c_str(),"")==0))<<std::endl; //done
+
 //Test limitation size
 char c[]       ="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
 test3=c;
