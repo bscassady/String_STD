@@ -5,20 +5,20 @@
 
 class String{
 
-  friend String operator+ (const String& lhs, const String& rhs);
+  friend String operator+ (const String& lhs, const String& rhs);//Returns a newly constructed string object with its str_ attribute being the concatenation of the str_ attribute of the String  lhs followed by the str_ attribute of rhs.
 
-  friend String operator+ (const char*   lhs, const String& rhs);//Returns a newly constructed string object with its value being the concatenation of the characters in lhs followed by those of rhs.
+  friend String operator+ (const char*   lhs, const String& rhs);//Returns a newly constructed string object with its str_ attribute being the concatenation of the characters in lhs followed by those of rhs.
   friend String operator+ ( const String& lhs,const char rhs);//Returns a newly created String object with a str_ argument being the concatenation of the str_ argument of the string and the char passed as parameter.
   friend String operator+ (const String& lhs, const char*   rhs);//Returns a newly constructed string object with its value being the concatenation of the characters in lhs followed by those of rhs.
 
   public :
   //Constructors
-  String();
+  String();//Default constructor setting size_ and capacity to 0 and str_ to a null character array.
 
   String(size_t Arbitrary_value_of_capacity);// Trivial Constructor with Arbitrary_value_of_capacity as parameter because we don't know how to get it yet
-  String(const char* s);
+  String(const char* s);//Constructor setting the str_ attribute to a character array passed as parameter and setting the size_ and capacity_ attributes accordingly.
 
-  String (const String& str);//Copy constructor - constructs a copy of str.
+  String (const String& str);//Copy constructor - constructs a copy of a String passed as parameter.
 
   //Destructor
   ~String();//Destroys the string object. This deallocates all the storage capacity allocated by the string using its allocator.
@@ -33,7 +33,7 @@ class String{
 
   size_t size() const;//Returns the length of the string, in terms of bytes.
 
-  size_t length() const;
+  size_t length() const;//Return the value of the attribute size_ of the String. Similar to size().
 
   const char* c_str() const; //Returns a pointer to an array that contains a null-terminated sequence of characters
   

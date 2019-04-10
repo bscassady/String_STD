@@ -151,5 +151,7 @@ std::cout<<(strcmp(test_res2.c_str(),"C++")==0)<<std::endl;
 
 delete test1;
 delete test2;
+
+
 return 0;
 }
